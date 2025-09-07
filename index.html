@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Projects | Portfolio</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      /* Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #667eea, #764ba2, #ff6ec4);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+        color: #fff;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Gradient Animation */
+      @keyframes gradientBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* Navbar */
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 40px;
+        background: rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(10px);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      nav h2 {
+        font-size: 1.6rem;
+        font-weight: 600;
+        background: linear-gradient(90deg, #ff6ec4, #7873f5, #4ade80);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      nav a {
+        color: #fff;
+        margin-left: 20px;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      nav a:hover {
+        color: #43e97b;
+      }
+
+      header {
+        padding: 70px 20px 30px;
+        text-align: center;
+      }
+      header h1 {
+        font-size: 3rem;
+        margin-bottom: 15px;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+      header p {
+        font-size: 1.2rem;
+        opacity: 0.95;
+        max-width: 750px;
+        margin: 0 auto;
+        line-height: 1.7;
+      }
+
+      /* Project Section */
+      .projects {
+        flex: 1;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        padding: 40px;
+      }
+
+      .project-card {
+        background: rgba(255, 255, 255, 0.08);
+        padding: 30px 25px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.35);
+        transition: all 0.35s ease;
+        backdrop-filter: blur(8px);
+      }
+      .project-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        background: rgba(255, 255, 255, 0.15);
+      }
+
+      .project-card h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        color: #fefefe;
+      }
+
+      .project-card button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px 18px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #43e97b, #38f9d7);
+        color: #fff;
+        cursor: pointer;
+        font-weight: 600;
+        transition: background 0.3s ease, transform 0.25s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+      .project-card button:hover {
+        background: linear-gradient(135deg, #00c6ff, #0072ff);
+        transform: scale(1.07);
+      }
+
+      footer {
+        text-align: center;
+        padding: 25px;
+        background: rgba(0, 0, 0, 0.25);
+        font-size: 0.95rem;
+        letter-spacing: 0.5px;
+      }
+
+      .social-links {
+        margin-top: 12px;
+      }
+
+      .social-links a {
+        margin: 0 12px;
+        font-size: 1.5rem;
+        color: #fff;
+        transition: transform 0.3s ease, color 0.3s ease;
+      }
+
+      .social-links a:hover {
+        color: #43e97b;
+        transform: scale(1.2);
+      }
+
+      /* Mobile adjustments */
+      @media (max-width: 600px) {
+        nav {
+          flex-direction: column;
+          text-align: center;
+        }
+        header h1 {
+          font-size: 2.2rem;
+        }
+        header p {
+          font-size: 1.05rem;
+          padding: 0 10px;
+        }
+        .project-card h2 {
+          font-size: 1.3rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <h2>My Portfolio</h2>
+      <div>
+        <a href="#projects">Projects</a>
+        <a
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=aniketjamunde4@gmail.com&su=Hello%20Aniket!&body=Hi%20Aniket,%0D%0AI%20just%20visited%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you."
+          target="_blank"
+          >Contact</a
+        >
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header>
+      <h1>🚀 My Projects</h1>
+      <p>
+        Every project I build is a step towards turning ideas into reality and
+        solving real-world problems with creativity and code.
+      </p>
+    </header>
+
+    <!-- Projects -->
+    <section class="projects" id="projects"></section>
+
+    <!-- Footer -->
+    <footer id="contact">
+      <p>© 2025 My Portfolio | All Rights Reserved</p>
+      <div class="social-links">
+        <a
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=aniketjamunde4@gmail.com&su=Hello%20Aniket!&body=Hi%20Aniket,%0D%0AI%20just%20visited%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you."
+          target="_blank"
+          title="Gmail"
+          ><i class="fa-solid fa-envelope"></i
+        ></a>
+        <a href="https://wa.me/919146293702" target="_blank" title="WhatsApp"
+          ><i class="fa-brands fa-whatsapp"></i
+        ></a>
+        <a
+          href="https://instagram.com/aniket_jamunde_002"
+          target="_blank"
+          title="Instagram"
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
+      </div>
+    </footer>
+
+    <!-- Script -->
+    <script>
+      const projectList = [
+        { title: "Swadyayam Main App", link: "https://swadyayam.web.app" },
+        {
+          title: "Subscription Website",
+          link: "https://swadyayam-subscription.web.app",
+        },
+        {
+          title: "Apli Sheti",
+          link: "https://aniketjamunde9146.github.io/aplisheti002.com/",
+        },
+        {
+          title: "Army Study",
+          link: "https://aniketjamunde9146.github.io/army_exam_preparation-2025/",
+        },
+        {
+          title: "Proposal",
+          link: "https://aniketjamunde9146.github.io/aanyaa-s-proposal.com/",
+        },
+        {
+          title: "Velentine-Day",
+          link: "https://aniketjamunde9146.github.io/velentine-day/",
+        },
+      ];
+
+      const container = document.getElementById("projects");
+
+      projectList.forEach((project) => {
+        const card = document.createElement("div");
+        card.className = "project-card";
+
+        card.innerHTML = `
+          <h2>${project.title}</h2>
+          <button onclick="window.open('${project.link}', '_blank')">
+            <i class="fa-solid fa-up-right-from-square"></i> Visit
+          </button>
+        `;
+
+        container.appendChild(card);
+      });
+    </script>
+  </body>
+</html>
