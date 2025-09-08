@@ -370,29 +370,53 @@
 
     <!-- Instagram Browser Detection -->
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const ua = navigator.userAgent || navigator.vendor || window.opera;
-        if (ua.includes("Instagram")) {
-          const popup = document.createElement("div");
-          popup.className = "popup-overlay";
-          popup.innerHTML = `
-          <div class="popup-box">
-            <span class="popup-close">&times;</span>
-            <h3>🚀 Open in Chrome/Safari</h3>
-            <p>For the best experience, please open this link in your default browser.</p>
-            <a href="https://aniketjamunde9146.github.io/My-Project-Portfolio-/" target="_blank">
+  document.addEventListener("DOMContentLoaded", function () {
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+
+    if (ua.includes("Instagram")) {
+      const popup = document.createElement("div");
+      popup.innerHTML = `
+        <div id="instaPopup" style="
+          position:fixed; top:0; left:0; width:100%; height:100%;
+          background:rgba(0,0,0,0.7); display:flex; align-items:center;
+          justify-content:center; z-index:9999;
+          font-family:Arial, sans-serif;
+        ">
+          <div style="
+            background:#fff; padding:20px; border-radius:12px; 
+            max-width:320px; text-align:center; box-shadow:0 5px 20px rgba(0,0,0,0.3);
+            animation: fadeIn 0.3s ease-in-out;
+          ">
+            <h2 style="margin-bottom:10px;">🚀 Open in Browser</h2>
+            <p style="margin-bottom:15px; font-size:14px; color:#333;">
+              Instagram's in-app browser may not support all features.  
+              Tap below to continue in Chrome/Safari.
+            </p>
+            <a href="https://your-portfolio-link.com" target="_blank" rel="noopener noreferrer"
+              style="display:inline-block; padding:10px 20px; background:#2563eb; 
+                     color:#fff; border-radius:8px; text-decoration:none; font-weight:bold;">
               Open in Browser
             </a>
+            <div style="margin-top:15px;">
+              <button onclick="document.getElementById('instaPopup').remove()" 
+                style="background:none; border:none; color:#555; font-size:13px; cursor:pointer;">
+                ✖ Close
+              </button>
+            </div>
           </div>
-        `;
-          document.body.appendChild(popup);
+        </div>
+        <style>
+          @keyframes fadeIn {
+            from { opacity:0; transform:scale(0.9); }
+            to { opacity:1; transform:scale(1); }
+          }
+        </style>
+      `;
+      document.body.appendChild(popup);
+    }
+  });
+</script>
 
-          // Close button
-          document
-            .querySelector(".popup-close")
-            .addEventListener("click", () => popup.remove());
-        }
-      });
-    </script>
   </body>
 </html>
+
