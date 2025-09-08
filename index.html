@@ -238,26 +238,31 @@
     <!-- Script -->
     <script>
       const projectList = [
-        { title: "Swadyayam Main App", link: "https://swadyayam.web.app" },
+        {
+          title: "Swadyayam Main App",
+          website: "https://swadyayam.web.app",
+          apk: "Swadhyayam.apk",
+        },
         {
           title: "Subscription Website",
-          link: "https://swadyayam-subscription.web.app",
+          website: "https://swadyayam-subscription.web.app",
         },
         {
           title: "Apli Sheti",
-          link: "https://aniketjamunde9146.github.io/aplisheti002.com/",
+          website: "https://aniketjamunde9146.github.io/aplisheti002.com/",
         },
         {
           title: "Army Study",
-          link: "https://aniketjamunde9146.github.io/army_exam_preparation-2025/",
+          website:
+            "https://aniketjamunde9146.github.io/army_exam_preparation-2025/",
         },
         {
           title: "Proposal",
-          link: "https://aniketjamunde9146.github.io/aanyaa-s-proposal.com/",
+          website: "https://aniketjamunde9146.github.io/aanyaa-s-proposal.com/",
         },
         {
-          title: "Velentine-Day",
-          link: "https://aniketjamunde9146.github.io/velentine-day/",
+          title: "Valentine-Day",
+          website: "https://aniketjamunde9146.github.io/velentine-day/",
         },
       ];
 
@@ -267,15 +272,35 @@
         const card = document.createElement("div");
         card.className = "project-card";
 
-        card.innerHTML = `
-          <h2>${project.title}</h2>
-          <button onclick="window.open('${project.link}', '_blank')">
-            <i class="fa-solid fa-up-right-from-square"></i> Visit
+        let buttons = "";
+
+        if (project.apk) {
+          buttons = `
+        <button onclick="window.open('${project.website}', '_blank')">
+          <i class="fa-solid fa-up-right-from-square"></i> Visit
+        </button>
+        <a href="${project.apk}" download>
+          <button>
+            <i class="fa-solid fa-download"></i> Download APK
           </button>
-        `;
+        </a>
+      `;
+        } else {
+          buttons = `
+        <button onclick="window.open('${project.website}', '_blank')">
+          <i class="fa-solid fa-up-right-from-square"></i> Visit
+        </button>
+      `;
+        }
+
+        card.innerHTML = `
+      <h2>${project.title}</h2>
+      ${buttons}
+    `;
 
         container.appendChild(card);
       });
     </script>
   </body>
 </html>
+
