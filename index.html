@@ -168,72 +168,6 @@
         transform: scale(1.2);
       }
 
-      /* Popup styles */
-      .popup-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.7);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 9999;
-        animation: fadeIn 0.3s ease-in-out;
-      }
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-      .popup-box {
-        background: #fff;
-        padding: 20px;
-        border-radius: 12px;
-        text-align: center;
-        max-width: 320px;
-        font-family: sans-serif;
-        position: relative;
-        color: #333;
-      }
-      .popup-box h3 {
-        margin-bottom: 10px;
-        font-size: 1.2rem;
-        color: #222;
-      }
-      .popup-box p {
-        margin-bottom: 15px;
-        font-size: 0.95rem;
-      }
-      .popup-box a {
-        display: inline-block;
-        padding: 10px 18px;
-        background: #4caf50;
-        color: #fff;
-        border-radius: 6px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: background 0.3s;
-      }
-      .popup-box a:hover {
-        background: #388e3c;
-      }
-      .popup-close {
-        position: absolute;
-        top: 8px;
-        right: 12px;
-        font-size: 18px;
-        cursor: pointer;
-        color: #666;
-      }
-      .popup-close:hover {
-        color: #000;
-      }
-
       /* Mobile adjustments */
       @media (max-width: 600px) {
         nav {
@@ -306,7 +240,7 @@
       const projectList = [
         {
           title: "Swadyayam Main App",
-          website: "https://swadyayam.web.app",
+          website: "https://swadyaym.web.app",
           apk: "Swadhyayam.apk",
         },
         {
@@ -367,56 +301,5 @@
         container.appendChild(card);
       });
     </script>
-
-    <!-- Instagram Browser Detection -->
-    <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const ua = navigator.userAgent || navigator.vendor || window.opera;
-
-    if (ua.includes("Instagram")) {
-      const popup = document.createElement("div");
-      popup.innerHTML = `
-        <div id="instaPopup" style="
-          position:fixed; top:0; left:0; width:100%; height:100%;
-          background:rgba(0,0,0,0.7); display:flex; align-items:center;
-          justify-content:center; z-index:9999;
-          font-family:Arial, sans-serif;
-        ">
-          <div style="
-            background:#fff; padding:20px; border-radius:12px; 
-            max-width:320px; text-align:center; box-shadow:0 5px 20px rgba(0,0,0,0.3);
-            animation: fadeIn 0.3s ease-in-out;
-          ">
-            <h2 style="margin-bottom:10px;">🚀 Open in Browser</h2>
-            <p style="margin-bottom:15px; font-size:14px; color:#333;">
-              Instagram's in-app browser may not support all features.  
-              Tap below to continue in Chrome/Safari.
-            </p>
-            <a href="https://your-portfolio-link.com" target="_blank" rel="noopener noreferrer"
-              style="display:inline-block; padding:10px 20px; background:#2563eb; 
-                     color:#fff; border-radius:8px; text-decoration:none; font-weight:bold;">
-              Open in Browser
-            </a>
-            <div style="margin-top:15px;">
-              <button onclick="document.getElementById('instaPopup').remove()" 
-                style="background:none; border:none; color:#555; font-size:13px; cursor:pointer;">
-                ✖ Close
-              </button>
-            </div>
-          </div>
-        </div>
-        <style>
-          @keyframes fadeIn {
-            from { opacity:0; transform:scale(0.9); }
-            to { opacity:1; transform:scale(1); }
-          }
-        </style>
-      `;
-      document.body.appendChild(popup);
-    }
-  });
-</script>
-
   </body>
 </html>
-
